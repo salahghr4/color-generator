@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap");
+
+:root {
+  --error-color: #b00020;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  line-height: 1.618;
+  color: #1a1a1a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+.header {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #fff;
+  box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.logo {
+  margin-right: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.logo-img {
+  width: 35px;
+  height: 35px;
+  user-select: none;
+}
+
+.input-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  height: 36px;
+  cursor: pointer;
+}
+.color-picker-wrapper:hover {
+  background-color: #f5f5f5;
+}
+
+.icon {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+input[type="color"] {
+  opacity: 0;
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 64px;
+}
+
+/* Custom circle style */
+.color-picker {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #1a1a1a4d;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.color-input-wrapper {
+  display: inline-flex;
+  align-items: baseline;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  border-bottom: 1px solid #000000de;
+}
+
+.color-input {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  max-width: 110px;
+  width: 100%;
+  padding: 0 0.5rem;
+  font-weight: 700;
+  height: 40px;
+  border: none;
+  outline: none;
+  caret-color: #a607d9;
+}
+.color-input-wrapper:focus-within {
+  border-bottom-width: 2px;
+}
+
+.color-input:invalid {
+  caret-color: var(--error-color);
+  color: var(--error-color);
+}
+.color-input-wrapper:has(.color-input:invalid) {
+  border-bottom-color: var(--error-color);
+}
+
+.color-weight-wrapper {
+  max-width: 92px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000000de;
+}
+.percent-icon {
+  margin: 0 0.5rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.color-weight-input {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 700;
+  height: 40px;
+  border: none;
+  outline: none;
+  caret-color: #a607d9;
+}
+
+.color-weight-wrapper:focus-within {
+  border-bottom-width: 2px;
+}
+
+.color-weight-input:invalid {
+  border-bottom-color: var(--error-color);
+  caret-color: var(--error-color);
+}
+
+.random-btn {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  user-select: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.random-btn:hover {
+  background-color: #f5f5f5;
+}
+
+main {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  background-color: #f3f3f3;
+}
+
+.colors-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.color-item {
+  padding: 1.5rem;
+  display: flex;
+  flex: 1 1 200px;
+  position: relative;
+}
+
+.item-percent {
+  display: flex;
+  font-size: 0.7rem;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0.5;
+}
+
+.copy-btn {
+  margin-left: 1rem;
+  opacity: 0;
+}
+
+.color-item:hover .copy-btn {
+  opacity: 1;
+}
+
+.icon-btn {
+  display: inline-block;
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  fill: currentColor;
+  color: inherit;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.light {
+  color: #000;
+}
+.dark {
+  color: #fff;
+}
+
+.icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.random-btn:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.shade-icon {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  color: transparent;
+}
+
+.base {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    margin-right: 0.2rem;
+  }
+  .color-weight-input {
+    max-width: 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    flex-direction: column;
+    height: 100%;
+    row-gap: 1rem;
+  }
+  .input-wrapper {
+    gap: 0.5rem;
+  }
+}
