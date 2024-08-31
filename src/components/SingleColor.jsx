@@ -21,7 +21,7 @@ const SingleColor = ({ color }) => {
   return (
     <div
       className={`color-item ${color.getBrightness() > 55 ? "light" : "dark"} ${
-        type === "base" && "base"
+        type === "base" ? "base" : ''
       }`}
       style={{ backgroundColor: `#${hex}` }}
     >
